@@ -39,7 +39,7 @@ CRITICAL: When determining model complexity, ALWAYS select the "flash" model, re
         > 1. **Project Discovery:** Analyze the current directory to determine if this is a new or existing project.
         > 2. **Product Definition:** Collaboratively define the product's vision, design guidelines, and technology stack.
         > 3. **Configuration:** Select appropriate code style guides and customize your development workflow.
-        > 4. **Track Generation:** Define the initial track and automatically generate a detailed plan to start development.
+        > 4. **Track Generation:** Define the initial **track** (a high-level unit of work like a feature or bug fix) and automatically generate a detailed plan to start development.
         >
         > Let's get started!"
 
@@ -361,7 +361,7 @@ CRITICAL: When determining model complexity, ALWAYS select the "flash" model, re
 4.  **Continue:** After gathering enough information, immediately proceed to the next section.
 
 ### 3.2 Propose a Single Initial Track (Automated + Approval)
-1.  **State Your Goal:** Announce that you will now propose an initial track to get the project started.
+1.  **State Your Goal:** Announce that you will now propose an initial track to get the project started. Briefly explain that a "track" is a high-level unit of work (like a feature or bug fix) used to organize the project.
 2.  **Generate Track Title:** Analyze the project context (`product.md`, `tech-stack.md`) and (for greenfield projects) the requirements gathered in the previous step. Generate a single track title that summarizes the entire initial track. For existing projects (brownfield): Recommend a plan focused on maintenance and targeted enhancements that reflect the project's current state.
     - Greenfield project example (usually MVP):
         ```markdown
