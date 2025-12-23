@@ -406,7 +406,7 @@ CRITICAL: When determining model complexity, ALWAYS select the "flash" model, re
             "status": "new", // or in_progress, completed, cancelled
             "created_at": "YYYY-MM-DDTHH:MM:SSZ",
             "updated_at": "YYYY-MM-DDTHH:MM:SSZ",
-            "description": "<Initial user description>",
+            "description": "<Initial user description>"
             }
             ```
         Populate fields with actual values. Use the current timestamp.
