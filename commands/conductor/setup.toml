@@ -148,11 +148,16 @@ CRITICAL: When determining model complexity, ALWAYS select the "flash" model, re
     -   **If user chose "Autogenerate":** Use your best judgment to expand on the initial project goal and infer any missing details to create a comprehensive document.
     -   **If user chose "Interactive":** Use the specific answers provided. The source of truth is **only the user's selected answer(s)**. You are encouraged to expand on these choices to create a polished output.
 5.  **User Confirmation Loop:**
-    -   **Present Content:** First, display the drafted `product.md` content to the user in the chat.
-    -   **Ask for Approval:** Then, use the `ask_user` tool to request confirmation:
+    -   **Announce:** Briefly state that the draft is ready (e.g., "Draft generated."). Do NOT repeat the request to "review" or "approve" in the chat.
+    -   **Ask for Approval:** Use the `ask_user` tool to request confirmation. You MUST embed the drafted content directly into the `question` field so the user can review it in context.
         - **questions:**
             - **header:** "Review"
-            - **question:** "Please review the drafted Product Guide above. What would you like to do next?"
+            - **question:**
+                Please review the drafted Product Guide below. What would you like to do next?
+
+                ---
+
+                <Insert Drafted product.md Content Here>
             - **type:** "choice"
             - **multiSelect:** false
             - **options:**
@@ -193,11 +198,16 @@ CRITICAL: When determining model complexity, ALWAYS select the "flash" model, re
     -   **If user chose "Autogenerate":** Use your best judgment to infer standard, high-quality guidelines suitable for the project type.
     -   **If user chose "Interactive":** Use the specific answers provided. The source of truth is **only the user's selected answer(s)**. You are encouraged to expand on these choices to create a polished output.
 5.  **User Confirmation Loop:**
-    -   **Present Content:** First, display the drafted `product-guidelines.md` content to the user in the chat.
-    -   **Ask for Approval:** Then, use the `ask_user` tool to request confirmation:
+    -   **Announce:** Briefly state that the draft is ready (e.g., "Draft generated."). Do NOT repeat the request to "review" or "approve" in the chat.
+    -   **Ask for Approval:** Use the `ask_user` tool to request confirmation. You MUST embed the drafted content directly into the `question` field so the user can review it in context.
         - **questions:**
             - **header:** "Review"
-            - **question:** "Please review the drafted Product Guidelines above. What would you like to do next?"
+            - **question:**
+                Please review the drafted Product Guidelines below. What would you like to do next?
+
+                ---
+
+                <Insert Drafted product-guidelines.md Content Here>
             - **type:** "choice"
             - **multiSelect:** false
             - **options:**
@@ -246,11 +256,16 @@ CRITICAL: When determining model complexity, ALWAYS select the "flash" model, re
     -   **If user chose "Autogenerate":** Use your best judgment to infer a standard, high-quality stack suitable for the project goal.
     -   **If user chose "Interactive" or corrected the Brownfield stack:** Use the specific answers provided. The source of truth is **only the user's selected answer(s)**.
 5.  **User Confirmation Loop:**
-    -   **Present Content:** First, display the drafted `tech-stack.md` content to the user in the chat.
-    -   **Ask for Approval:** Then, use the `ask_user` tool to request confirmation:
+    -   **Announce:** Briefly state that the draft is ready (e.g., "Draft generated."). Do NOT repeat the request to "review" or "approve" in the chat.
+    -   **Ask for Approval:** Use the `ask_user` tool to request confirmation. You MUST embed the drafted content directly into the `question` field so the user can review it in context.
         - **questions:**
             - **header:** "Review"
-            - **question:** "Please review the drafted Tech Stack above. What would you like to do next?"
+            - **question:**
+                Please review the drafted Tech Stack below. What would you like to do next?
+
+                ---
+
+                <Insert Drafted tech-stack.md Content Here>
             - **type:** "choice"
             - **multiSelect:** false
             - **options:**

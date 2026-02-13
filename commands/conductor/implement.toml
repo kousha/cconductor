@@ -117,32 +117,47 @@ CRITICAL: You must validate the success of every tool call. If any tool call fai
     b.  **Update Product Definition:**
         i. **Condition for Update:** Based on your analysis, you MUST determine if the completed feature or bug fix significantly impacts the description of the product itself.
         ii. **Propose and Confirm Changes:** If an update is needed:
-            - **Present Content:** First, display the proposed updates to the **Product Definition** (ideally in a diff format) to the user in the chat.
-            - **Ask for Approval:** Then, use the `ask_user` tool to request confirmation:
+            -   **Announce:** Briefly state that updates are proposed. Do NOT repeat the request to review in the chat.
+            -   **Ask for Approval:** Use the `ask_user` tool to request confirmation. You MUST embed the proposed updates (ideally in a diff format) directly into the `question` field so the user can review them in context.
                 - **questions:**
                     - **header:** "Prod Definition"
-                    - **question:** "Do you approve these changes to the Product Definition?"
+                    - **question:**
+                        Please review the proposed updates to the Product Definition below. Do you approve?
+
+                        ---
+
+                        <Insert Proposed product.md Updates/Diff Here>
                     - **type:** "yesno"
         iii. **Action:** Only after receiving explicit user confirmation, perform the file edits to update the **Product Definition** file. Keep a record of whether this file was changed.
     c.  **Update Tech Stack:**
         i. **Condition for Update:** Similarly, you MUST determine if significant changes in the technology stack are detected as a result of the completed track.
         ii. **Propose and Confirm Changes:** If an update is needed:
-            - **Present Content:** First, display the proposed updates to the **Tech Stack** (ideally in a diff format) to the user in the chat.
-            - **Ask for Approval:** Then, use the `ask_user` tool to request confirmation:
+            -   **Announce:** Briefly state that updates are proposed. Do NOT repeat the request to review in the chat.
+            -   **Ask for Approval:** Use the `ask_user` tool to request confirmation. You MUST embed the proposed updates (ideally in a diff format) directly into the `question` field so the user can review them in context.
                 - **questions:**
                     - **header:** "Tech Stack"
-                    - **question:** "Do you approve these changes to the Tech Stack?"
+                    - **question:**
+                        Please review the proposed updates to the Tech Stack below. Do you approve?
+
+                        ---
+
+                        <Insert Proposed tech-stack.md Updates/Diff Here>
                     - **type:** "yesno"
         iii. **Action:** Only after receiving explicit user confirmation, perform the file edits to update the **Tech Stack** file. Keep a record of whether this file was changed.
     d. **Update Product Guidelines (Strictly Controlled):**
         i. **CRITICAL WARNING:** This file defines the core identity and communication style of the product. It should be modified with extreme caution and ONLY in cases of significant strategic shifts, such as a product rebrand or a fundamental change in user engagement philosophy. Routine feature updates or bug fixes should NOT trigger changes to this file.
         ii. **Condition for Update:** You may ONLY propose an update to this file if the track's **Specification** explicitly describes a change that directly impacts branding, voice, tone, or other core product guidelines.
         iii. **Propose and Confirm Changes:** If the conditions are met:
-            - **Present Content:** First, display the proposed changes to the **Product Guidelines** (ideally in a diff format) to the user in the chat, including a clear warning.
-            - **Ask for Approval:** Then, use the `ask_user` tool to request confirmation:
+            -   **Announce:** Briefly state that updates are proposed. Do NOT repeat the request to review in the chat.
+            -   **Ask for Approval:** Use the `ask_user` tool to request confirmation. You MUST embed the proposed changes (ideally in a diff format) directly into the `question` field, including a clear warning.
                 - **questions:**
                     - **header:** "Prod Guidelines"
-                    - **question:** "WARNING: This is an unusual step. Do you approve these critical changes to the Product Guidelines?"
+                    - **question:**
+                        WARNING: This is an unusual step as it impacts core product guidelines. Please review the proposed changes below. Do you approve these critical changes?
+
+                        ---
+
+                        <Insert Proposed product-guidelines.md Updates/Diff Here>
                     - **type:** "yesno"
         iv. **Action:** Only after receiving explicit user confirmation, perform the file edits. Keep a record of whether this file was changed.
 
