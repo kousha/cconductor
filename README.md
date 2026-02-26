@@ -1,8 +1,8 @@
-# Conductor Extension for Gemini CLI
+# Conductor
 
 **Measure twice, code once.**
 
-Conductor is a Gemini CLI extension that enables **Context-Driven Development**. It turns the Gemini CLI into a proactive project manager that follows a strict protocol to specify, plan, and implement software features and bug fixes.
+Conductor is an extension for **Gemini CLI** and **Claude Code** that enables **Context-Driven Development**. It turns your AI coding assistant into a proactive project manager that follows a strict protocol to specify, plan, and implement software features and bug fixes.
 
 Instead of just writing code, Conductor ensures a consistent, high-quality lifecycle for every task: **Context -> Spec & Plan -> Implement**.
 
@@ -19,6 +19,8 @@ The philosophy behind Conductor is simple: control your code. By treating contex
 
 ## Installation
 
+### Gemini CLI
+
 Install the Conductor extension by running the following command from your terminal:
 
 ```bash
@@ -26,6 +28,24 @@ gemini extensions install https://github.com/gemini-cli-extensions/conductor --a
 ```
 
 The `--auto-update` is optional: if specified, it will update to new versions as they are released.
+
+### Claude Code
+
+1. Clone the Conductor repository:
+```bash
+git clone https://github.com/gemini-cli-extensions/conductor.git ~/conductor
+```
+
+2. Run the install script from your project directory:
+```bash
+~/conductor/install-claude.sh
+```
+
+This will:
+- Symlink Conductor slash commands into `.claude/commands/`
+- Add the Conductor context (Universal File Resolution Protocol) to your project's `CLAUDE.md`
+
+**Note:** Both Gemini CLI and Claude Code share the same `conductor/` project state directory. You can switch between the two tools seamlessly — tracks, plans, and specs created in one are fully accessible in the other.
 
 ## Usage
 
@@ -121,6 +141,19 @@ During implementation, you can also:
 | `/conductor:status` | Displays the current progress of the tracks file and active tracks. | Reads `conductor/tracks.md` |
 | `/conductor:revert` | Reverts a track, phase, or task by analyzing git history. | Reverts git history |
 | `/conductor:review` | Reviews completed work against guidelines and the plan. | Reads `plan.md`, `product-guidelines.md` |
+
+## Platform Support
+
+| Feature | Gemini CLI | Claude Code |
+|---|---|---|
+| `/conductor:setup` | Yes | Yes |
+| `/conductor:newTrack` | Yes | Yes |
+| `/conductor:implement` | Yes | Yes |
+| `/conductor:status` | Yes | Yes |
+| `/conductor:review` | Yes | Yes |
+| `/conductor:revert` | Yes | Yes |
+| Shared `conductor/` state | Yes | Yes |
+| Interactive prompts | `ask_user` tool | Natural conversation |
 
 ## Resources
 
